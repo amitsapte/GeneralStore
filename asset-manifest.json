@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GeneralStore/static/css/main.bb6f07e8.css",
+    "main.js": "/GeneralStore/static/js/main.456b8e68.js",
+    "static/js/488.9c92ff38.chunk.js": "/GeneralStore/static/js/488.9c92ff38.chunk.js",
+    "index.html": "/GeneralStore/index.html",
+    "main.bb6f07e8.css.map": "/GeneralStore/static/css/main.bb6f07e8.css.map",
+    "main.456b8e68.js.map": "/GeneralStore/static/js/main.456b8e68.js.map",
+    "488.9c92ff38.chunk.js.map": "/GeneralStore/static/js/488.9c92ff38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb6f07e8.css",
+    "static/js/main.456b8e68.js"
+  ]
+}
