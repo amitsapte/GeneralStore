@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/GeneralStore/static/css/main.bb6f07e8.css",
-    "main.js": "/GeneralStore/static/js/main.95d3bf7e.js",
+    "main.js": "/GeneralStore/static/js/main.92454cd5.js",
     "static/js/488.9c92ff38.chunk.js": "/GeneralStore/static/js/488.9c92ff38.chunk.js",
+    "static/media/BlackBeer.png": "/GeneralStore/static/media/BlackBeer.ea00865242876d94199e.png",
+    "static/media/cola.png": "/GeneralStore/static/media/cola.478ddb60cf8a1f7c1543.png",
     "index.html": "/GeneralStore/index.html",
     "main.bb6f07e8.css.map": "/GeneralStore/static/css/main.bb6f07e8.css.map",
-    "main.95d3bf7e.js.map": "/GeneralStore/static/js/main.95d3bf7e.js.map",
+    "main.92454cd5.js.map": "/GeneralStore/static/js/main.92454cd5.js.map",
     "488.9c92ff38.chunk.js.map": "/GeneralStore/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb6f07e8.css",
-    "static/js/main.95d3bf7e.js"
+    "static/js/main.92454cd5.js"
   ]
 }
