@@ -6,7 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 const Product = () => {
 
    const dispatch=useDispatch();
-   const {activeIndex,activeProduct,item,product} =useSelector((state)=> state);
+
+   // here i take state
+   const {activeIndex,activeProduct,item,product} = useSelector((state)=> ({
+            activeIndex:  state.activeIndex,   activeProduct:state.activeProduct,
+            item: state.item,  product: state.product
+   }));
 
  const handleClikc = (index) =>{
      dispatch(setActiveIndex(index));
@@ -28,10 +33,10 @@ const Product = () => {
                     <div className=" flex flex-row items-center  mr-8 ">
                         <div><label>sort by</label></div>
                         <div className="ml-2">
-                            <button type="button" class="inline-flex justify-between w-full rounded-md border border-gray-300  px-4 py-2 text-sm font-medium text-green-700 ">
+                            <button type="button" className="inline-flex justify-between w-full rounded-md border border-gray-300  px-4 py-2 text-sm font-medium text-green-700 ">
                                 Default dropdown
-                                <svg class="ml-2 -mr-1 h-5 w-5 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <svg className="ml-2 -mr-1 h-5 w-5 text-green-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
                         </div>

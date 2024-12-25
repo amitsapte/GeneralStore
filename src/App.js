@@ -1,5 +1,5 @@
 // 
-import  {   Link, Route,  BrowserRouter as Router, Routes } from 'react-router-dom';
+import  {   Link, Route,  BrowserRouter as Router, Routes  } from 'react-router-dom';
 import './App.css';
 
 import Home from './home/home';
@@ -16,7 +16,11 @@ function App() {
           <Link to={"/Login"}>  </Link>
         </nav>
         <Routes>
-          <Route path='/' element={<Home/>}></Route>
+         
+          {/* Redirect any non-existing route (like /GeneralStore) to the home page */}
+        <Route path="/GeneralStore"  element={<Home/>}>
+          
+        </Route>
           <Route path='/Login' element={<UserLogin/>}></Route>
         </Routes>
       </Router>

@@ -1,16 +1,11 @@
-
+import imageBlackBeer from '../image/BlackBeer.png'
 
 const ItemCard = ({ currentItem }) => {
-  console.log(currentItem);
-
 
   return (
-
-
-
     <div className=" w-[190px] h-[270px] grid  grid-rows-2 border-2 rounded shadow-lg   bg-white" >
       <div className="relative pl-1 pr-1 h-full border-0 w-full  flex justify-center items-center ">
-        <img src="./BlackBeer.png" className=" px-10 py-3 relative w-full h-full  object-cover" alt="Imagenotfound" />
+        <img src={imageBlackBeer} className=" px-10 py-3 relative w-full h-full  object-cover" alt="Imagenotfound" />
         {currentItem && currentItem.percentage ? <div className="absolute top-0 left-1 text-center ">
           <svg className="w-6 h-6" fill="#5088EF">
             <rect height={24} width={24}></rect>
@@ -21,7 +16,7 @@ const ItemCard = ({ currentItem }) => {
         </div> : ""}
       </div>
       <div className='flex flex-col ml-1 mr-1 '>
-        <div className=' text-[8px] w-fit font-bold shadow-sm rounded-sm bg-slate-100' > <span className="font-size: 10px;">⌚</span> 12 min </div>
+        <div className=' text-[8px] w-fit font-bold shadow-sm rounded-sm bg-slate-100' > <span className="font-size: 10px;"></span> 12 min </div>
         <div className='font-bold mt-2 text-[13px] h-[40px] w-[150px] overflow-hidden text-ellipsis line-clamp-2'>
           {currentItem.itemName}
         </div>

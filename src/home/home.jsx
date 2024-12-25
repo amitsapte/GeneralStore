@@ -4,11 +4,11 @@ import Header from "../header/header";
 const Home=()=>{
     return(
         <div className='gird grid-rows-3 row-auto' >
-        <div className=''>
+        <div >
             <Header/>
         </div>
      
-        <div className='  mx-14'>
+        <div className='mx-14'>
           <Product/>
         </div>
       </div>
