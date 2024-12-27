@@ -3,7 +3,7 @@ import imageBlackBeer from '../image/BlackBeer.png'
 const ItemCard = ({ currentItem }) => {
 
   return (
-    <div className=" w-[190px] h-[270px] grid  grid-rows-2 border-2 rounded shadow-lg   bg-white" >
+    <div className=" w-[195px] h-[270px]  grid  grid-rows-2  mt-2 ml-[6px] border-2 rounded shadow-lg   bg-white" >
       <div className="relative pl-1 pr-1 h-full border-0 w-full  flex justify-center items-center ">
         <img src={imageBlackBeer} className=" px-10 py-3 relative w-full h-full  object-cover" alt="Imagenotfound" />
         {currentItem && currentItem.percentage ? <div className="absolute top-0 left-1 text-center ">
@@ -23,8 +23,8 @@ const ItemCard = ({ currentItem }) => {
         <p className=' text-slate-700 mt-1 text-[12px]'>150 g</p>
         <div className=' flex justify-between items-center mt-2'>
           <div className='flex flex-col gap-0 '>
-            <div className=' font-bold font-serif text-[12px] '>₹{currentItem.price}</div>
-            <div className=' text-slate-700 text-[12px] line-through'>{currentItem.percentage ? `₹ ${(((currentItem.percentage * 100) / currentItem.price) + currentItem.price).toFixed(2)}` : <div></div>}</div>
+            <div className=' font-bold font-serif text-[12px] '>₹{ currentItem.percentage? Math.round( ( currentItem.price- (currentItem.price * currentItem.percentage ) / 100 )) : currentItem.price}</div>
+            <div className=' text-slate-700 text-[12px] line-through'>{ currentItem.percentage?  currentItem.price : <></> }</div>
           </div>
           <div className=''>
             <button className='border border-green-700  bg-green-50 text-[12px]  rounded-md font-bold w-16 h-8 text-green-700' type='submit' >ADD</button>
