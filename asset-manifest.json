@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/GeneralStore/static/css/main.85259d47.css",
-    "main.js": "/GeneralStore/static/js/main.8d6ab8a9.js",
+    "main.css": "/GeneralStore/static/css/main.a6da1b27.css",
+    "main.js": "/GeneralStore/static/js/main.a8b098d2.js",
     "static/js/488.9c92ff38.chunk.js": "/GeneralStore/static/js/488.9c92ff38.chunk.js",
     "static/media/BlackBeer.png": "/GeneralStore/static/media/BlackBeer.ea00865242876d94199e.png",
     "static/media/cola.png": "/GeneralStore/static/media/cola.478ddb60cf8a1f7c1543.png",
     "index.html": "/GeneralStore/index.html",
-    "main.85259d47.css.map": "/GeneralStore/static/css/main.85259d47.css.map",
-    "main.8d6ab8a9.js.map": "/GeneralStore/static/js/main.8d6ab8a9.js.map",
+    "main.a6da1b27.css.map": "/GeneralStore/static/css/main.a6da1b27.css.map",
+    "main.a8b098d2.js.map": "/GeneralStore/static/js/main.a8b098d2.js.map",
     "488.9c92ff38.chunk.js.map": "/GeneralStore/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.85259d47.css",
-    "static/js/main.8d6ab8a9.js"
+    "static/css/main.a6da1b27.css",
+    "static/js/main.a8b098d2.js"
   ]
 }
