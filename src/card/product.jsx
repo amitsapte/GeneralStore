@@ -8,10 +8,11 @@ const Product = () => {
     const dispatch = useDispatch();
 
     // here i take state
-    const { activeIndex, activeProduct, item, product, userSearch } = useSelector((state) => ({
+    const { activeIndex, activeProduct, item, product, userSearch, arrayOfImage } = useSelector((state) => ({
         activeIndex: state.activeIndex, activeProduct: state.activeProduct,
-        item: state.item, product: state.product, userSearch: state.initalSearch
+        item: state.item, product: state.product, userSearch: state.initalSearch, arrayOfImage: state.arrayOfImage
     }));
+
 
     const handleClikc = (index) => {
         dispatch(setActiveIndex(index));
@@ -23,7 +24,7 @@ const Product = () => {
                 <div className="grid grid-flow-col gap-0">
                     <div className="flex flex-col">
                         {product.map((currentIndex, index) => {
-                            return <ProductCard key={index} currentIndex={currentIndex} isActive={activeIndex === index} onClick={() => { handleClikc(index) }} />
+                            return <ProductCard key={index} currentIndex={currentIndex} isActive={activeIndex === index} onClick={() => { handleClikc(index) }} imageProduct={arrayOfImage[index].producImage} />
                         })}
                     </div>
                     <div>
@@ -45,7 +46,7 @@ const Product = () => {
                         </div>
                         <div className=' grid   grid-cols-1 overflow-hidden md:grid-cols-5 lg:grid-cols-5 bg-blue-50 border-r'>
                             {item[activeProduct].map((currentItem, index) => {
-                                return <ItemCard key={index} currentItem={currentItem} />
+                                return <ItemCard key={index} currentItem={currentItem} imgaeCard={arrayOfImage[activeProduct].cardImage} />
                             })}
                         </div>
                     </div>

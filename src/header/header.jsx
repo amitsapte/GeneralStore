@@ -8,7 +8,7 @@ const Header = () => {
     const navigator = useNavigate();
 
     const dispatch = useDispatch();
-    const { product, item } = useSelector((state) => ({ product: state.product, item: state.item }))
+    const { product, item ,arrayOfImage} = useSelector((state) => ({ product: state.product, item: state.item ,arrayOfImage :state. arrayOfImage }))
     const [userSearch, setSearch] = useState("");
     const [findId, setfindId] = useState(0);
     const displayThatItem = (event) => {
@@ -27,7 +27,7 @@ const Header = () => {
 
 
 
-        console.log(findId);
+        // console.log(findId);
     }
 
     const gotoLoginPage = () => {
@@ -67,7 +67,7 @@ const Header = () => {
              <div className="grid grid-cols-5 mt-2 h-full gap-1  ">
                 
                { item[findId-1].map( (currentItem, index ) => {
-                    return <ItemCard currentItem={currentItem}  key={index} />
+                    return <ItemCard currentItem={currentItem}  key={index} imgaeCard={arrayOfImage[findId-1].cardImage }  />
                 } )}
             </div> </div> : <div></div>}
         </div>

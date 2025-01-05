@@ -1,13 +1,12 @@
-import imageBlackBeer from '../image/BlackBeer.png'
 
-const ItemCard = ({ currentItem }) => {
+const ItemCard = ({ currentItem,imgaeCard }) => {
 
   return (
     <div className=" w-[195px] h-[270px]  grid  grid-rows-2  mt-2 ml-[6px] border-2 rounded shadow-lg overflow-hidden   bg-white" >
       <div className='flex justify-center  overflow-hidden  '>
-        <div className=" pl-1 pr-1 h-auto border-0 w-auto      ">
+        <div className=" pl-1 pr-1 h-auto border-0 w-auto  justify-center items-center    ">
           {currentItem && currentItem.percentage ?
-            <div className=" top-0 left-1 text-center  z-10 ">
+            <div className=" top-0 left-1 text-center w-auto  z-10 ">
               <svg className="w-6 h-6" fill="#5088EF">
                 <rect height={24} width={24}></rect>
                 <text x="50%" y="50%" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold" dy=".3em">
@@ -22,8 +21,8 @@ const ItemCard = ({ currentItem }) => {
             </div> : ""}
 
         </div>
-        <div className=' justify-center pr-12 py-1  items-center overflow-hidden '>
-          <img src={imageBlackBeer} className="  h-auto w-auto   object-cover" alt="Imagenotfound" />
+        <div className=' justify-center px-6 py-1 items-center overflow-hidden '>
+          <img src={imgaeCard} className="  h-auto w-auto   object-cover" alt="Imagenotfound" />
         </div>
       </div>
       <div className='flex flex-col ml-1 mr-1 '>
