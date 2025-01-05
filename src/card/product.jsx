@@ -43,7 +43,7 @@ const Product = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className=' grid   grid-cols-5   bg-blue-50 border-r'>
+                        <div className=' grid   grid-cols-1 overflow-hidden md:grid-cols-5 lg:grid-cols-5 bg-blue-50 border-r'>
                             {item[activeProduct].map((currentItem, index) => {
                                 return <ItemCard key={index} currentItem={currentItem} />
                             })}
