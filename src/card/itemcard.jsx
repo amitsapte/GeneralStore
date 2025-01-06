@@ -2,7 +2,7 @@
 const ItemCard = ({ currentItem,imgaeCard }) => {
 
   return (
-    <div className=" w-[195px] h-[270px]  grid  grid-rows-2  mt-2 ml-[6px] border-2 rounded shadow-lg overflow-hidden   bg-white" >
+    <div className=" w-[185px]  h-[270px]   sm:w-[225px] sm:h-[270px] md:w-[265px] md:h[270px] lg:w-[225px] lg:h-[270px] grid  grid-rows-2  mt-2 ml-[6px] border-2 rounded shadow-lg overflow-hidden   bg-white" >
       <div className='flex justify-center  overflow-hidden  '>
         <div className=" pl-1 pr-1 h-auto border-0 w-auto  justify-center items-center    ">
           {currentItem && currentItem.percentage ?

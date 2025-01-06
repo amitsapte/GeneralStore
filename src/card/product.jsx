@@ -1,3 +1,4 @@
+import { product ,item ,arrayOfImage } from "../data/cardData";
 import { setActiveIndex, setActiveProduct } from "../reduxstory/action";
 import ItemCard from "./itemcard";
 import ProductCard from "./productcard";
@@ -8,11 +9,12 @@ const Product = () => {
     const dispatch = useDispatch();
 
     // here i take state
-    const { activeIndex, activeProduct, item, product, userSearch, arrayOfImage } = useSelector((state) => ({
+    const { activeIndex, activeProduct, userSearch } = useSelector((state) => ({
         activeIndex: state.activeIndex, activeProduct: state.activeProduct,
-        item: state.item, product: state.product, userSearch: state.initalSearch, arrayOfImage: state.arrayOfImage
+        userSearch: state.initalSearch
     }));
 
+   
 
     const handleClikc = (index) => {
         dispatch(setActiveIndex(index));
@@ -44,7 +46,7 @@ const Product = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className=' grid   grid-cols-1 overflow-hidden md:grid-cols-5 lg:grid-cols-5 bg-blue-50 border-r'>
+                        <div className=' grid   grid-cols-2 overflow-hidden md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-2 bg-blue-50 border-r'>
                             {item[activeProduct].map((currentItem, index) => {
                                 return <ItemCard key={index} currentItem={currentItem} imgaeCard={arrayOfImage[activeProduct].cardImage} />
                             })}

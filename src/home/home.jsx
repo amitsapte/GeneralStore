@@ -27,7 +27,7 @@ useEffect(() => {
             <Header/>
         </div>
      
-        <div className='mx-14'>
+        <div className='mx-1 sm:mx-3 md:mx-3 lg:mx-6'>
           <Product/>
         </div>
       </div>
