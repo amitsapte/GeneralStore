@@ -38,9 +38,9 @@ const Header = () => {
     }
     return (
         <div>
-            <div className="border-b">
-                <div className="flex flex-row justify-between items-center w-auto  h-[80px] mx-2">
-                    <div className="  flex-row justify-between items-center h-full  lg:block hidden">
+            <div className=" md:border-b ">
+                <div className="flex flex-row justify-between items-center w-auto  h-[50px] md:h-[80px] mx-2">
+                    <div className="  flex-row justify-between items-center h-full  lg:flex hidden">
                         <span className=" text-yellow-400 text-[30px] font-bold "> Genral</span>
                         <span className="text-green-500 text-[30px] font-bold ">Story </span>
 
@@ -48,7 +48,7 @@ const Header = () => {
                     <div className=" border-r hidden lg:block w-12px h-full m-0 bg-red-600" >
                     </div>
                     <div className=" flex flex-row justify-center items-center w-auto   ">
-                        <p className="text-[15px] justify-start  w-[240px] lg:text-[20px]  sm:w-[240px] md:w-[240px] sm:h-auto md:h-auto sm:text-[15px] md:text-[25px] lg:w-auto lg:h-auto font-bold">
+                        <p className="text-[25px] justify-start  w-[240px] lg:text-[20px]  sm:w-[240px] md:w-[240px] sm:h-auto md:h-auto sm:text-[15px] md:text-[25px] lg:w-auto lg:h-auto font-bold">
                             Deliver in 5 Minutes
                         </p>
 
@@ -63,6 +63,9 @@ const Header = () => {
                         <button className="rounded-md bg-green-500  w-[100px] lg:visible invisible h-[40px] text-white">My Card</button>
                     </div>
                 </div>
+                <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >
+                        <h2 className="font-bold text-[12px]">Buy {product[(findId )].name} online</h2>
+                    </div>
             </div>
             {findId >= 1 ?
                 <div className="mt-14 mx-28 h-full" >

@@ -23,7 +23,7 @@ useEffect(() => {
 
     return(
         <div className='gird grid-rows-3 row-auto' >
-        <div className={`sticky top-0 w-full bg-white shadow-md ${isScrolled ? '' : ''}`} >
+        <div className={`sticky top-0 w-full bg-white md:shadow-md  ${isScrolled ? '' : ''}`} >
             <Header/>
         </div>
      
