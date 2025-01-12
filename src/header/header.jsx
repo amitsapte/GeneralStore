@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUserSearch } from "../reduxstory/action";
 import ItemCard from "../card/itemcard";
-import { product ,item ,arrayOfImage } from "../data/cardData";
+import { product, item, arrayOfImage } from "../data/cardData";
 
 const Header = () => {
     const navigator = useNavigate();
@@ -18,10 +18,13 @@ const Header = () => {
 
         setSearch(event.target.value);
         if (userSearch.length > 1) {
-            dispatch(setUserSearch(false));
-            setfindId((product.filter(product => product.name.toLowerCase()
-                .includes(userSearch.toLowerCase()))).map(product => product.id));
 
+            dispatch(setUserSearch(false));
+            const matchingIds = product
+                .filter(productCheck => productCheck.name.toLowerCase().includes(userSearch.toLowerCase()))
+                .map(productCheck => productCheck.id);
+            console.log(matchingIds[0]);
+            setfindId(matchingIds.length > 0 ? matchingIds[0] : 0);
         }
         else {
             dispatch(setUserSearch(true));
@@ -53,7 +56,7 @@ const Header = () => {
                         </p>
 
                     </div>
-                    <div className=" invisible lg:visible " >
+                    <div className=" invisible sm:visible " >
                         <input className=" border   w-[460px] h-[40px] rounded-md" value={userSearch} placeholder="Search" onChange={displayThatItem}></input>
                     </div>
                     <div onClick={gotoLoginPage} className="border w-[100px]  h-[40px] border-black rounded-md lg:visible invisible flex justify-center  items-center">
@@ -64,13 +67,13 @@ const Header = () => {
                     </div>
                 </div>
                 <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >
-                        <h2 className="font-bold text-[12px]">Buy {product[(findId )].name} online</h2>
-                    </div>
+                    <h2 className="font-bold text-[12px]">Buy {product[(findId)].name} online</h2>
+                </div>
             </div>
             {findId >= 1 ?
-                <div className="mt-14 mx-28 h-full" >
+                <div className=" mx-6 sm:mx-16 lg:mt-14 lg:mx-24 md:mx-20 md:mt-7 h-full" >
                     <p className="font-bold"> Showing result for "{userSearch}"</p>
-                    <div className="grid grid-cols-5 mt-2 h-full gap-1  ">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 mll:grid-cols-3 md:grid-cols-3 lgs:grid-cols-5  mt-2 h-full gap-1  ">
                         {item[findId - 1].map((currentItem, index) => {
                             return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1].cardImage} />
                         })}

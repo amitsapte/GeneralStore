@@ -8,8 +8,9 @@ import store from './reduxstory/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}> {/* Wrap your app in the Provider */}
+  <Provider store={store}> {
     <App />
+  }
   </Provider>,
 
 );

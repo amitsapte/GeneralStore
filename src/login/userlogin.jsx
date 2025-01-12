@@ -5,7 +5,7 @@ const UserLogin = () => {
 
     return (
 
-        <div className="relative h-full">
+        <div className="relative h-auto">
             {/* Full-screen SVG */}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ const UserLogin = () => {
                 preserveAspectRatio="xMidYMid meet"  // Stretch without preserving aspect ratio
             >
                 {/* Rectangle filling the entire SVG */}
-                <rect x="0" y="0" width="100% " height="100%" fill="black" />
+                <rect x="0" y="0" width="100 " height="100" fill="black" />
 
                 {/* draing a circle */}
                 <circle cx="20" cy="20" r=".3" fill="white" troke="black" strokeWidth="1">
