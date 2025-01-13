@@ -14,4 +14,4 @@ export const  item =[[{ percentage: 12 ,itemName:"Amul Taaza Toned Fresh Milk",p
     {itemName:"English Oven Sandwich WHite Bread",price:40},{itemName:"Britannia Brrown Bread",price:50},{itemName:"The Health Factory Zero Maida Protein Bread",price:76}], [{itemName:"Yojana Poultry Power White Eggs",price:53}, {itemName:"Yojana Poultry Power ",price:104},{itemName:"Table White Eggs",price:104},{itemName:"Table White Eggs ",price:106},{itemName:"Hen Fruit White Protein Rich Eggs",price:119}
 ]];
 
-export  const product = [{ name: "Milk" ,id:1 }, { name: "Rusks" ,id:2 }, { name: "Oats" ,id:3}]
+export  const product = [{ name: "Milk" ,id:1 }, { name: "Rusks" ,id:2 }, { name: "Oats" ,id:3}];

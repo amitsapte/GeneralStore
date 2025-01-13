@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUserSearch } from "../reduxstory/action";
@@ -14,6 +14,24 @@ const Header = () => {
 
     const [userSearch, setSearch] = useState("");
     const [findId, setfindId] = useState(0);
+
+    const [defaultProduct , setDefaultProduct] = useState(0);
+
+     useEffect (() =>{
+         if(findId > 0) {
+         setDefaultProduct((findId-1));
+         setDefaultProduct(findId);
+         console.log(findId);
+
+         }
+         else   {
+         setDefaultProduct(defaultProduct);
+        //  console.log(findId);
+
+         }
+    }, [findId ,defaultProduct] );
+
+
     const displayThatItem = (event) => {
 
         setSearch(event.target.value);
@@ -23,11 +41,11 @@ const Header = () => {
             const matchingIds = product
                 .filter(productCheck => productCheck.name.toLowerCase().includes(userSearch.toLowerCase()))
                 .map(productCheck => productCheck.id);
-            console.log(matchingIds[0]);
             setfindId(matchingIds.length > 0 ? matchingIds[0] : 0);
         }
         else {
             dispatch(setUserSearch(true));
+            setDefaultProduct(0);
             setfindId(0);
         }
 
@@ -67,15 +85,16 @@ const Header = () => {
                     </div>
                 </div>
                 <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >
-                    <h2 className="font-bold text-[12px]">Buy {product[(findId)].name} online</h2>
+                    <h2 className="font-bold text-[12px]">  Buy {product[findId - 1] && product[findId - 1].name ? product[findId - 1].name : "Product"} online
+                    </h2>
                 </div>
             </div>
-            {findId >= 1 ?
+            {findId >= 1 || defaultProduct >0 ?
                 <div className=" mx-6 sm:mx-16 lg:mt-14 lg:mx-24 md:mx-20 md:mt-7 h-full" >
                     <p className="font-bold"> Showing result for "{userSearch}"</p>
                     <div className="grid grid-cols-2 sm:grid-cols-2 mll:grid-cols-3 md:grid-cols-3 lgs:grid-cols-5  mt-2 h-full gap-1  ">
-                        {item[findId - 1].map((currentItem, index) => {
-                            return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1].cardImage} />
+                        {item[ ( (findId - 1) > 0 ? (findId -1) : defaultProduct -1 ) ].map((currentItem, index) => {
+                            return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1  >= 0 ? (findId -1) :  defaultProduct -1].cardImage} />
                         })}
                     </div> </div> : <div></div>}
         </div>
