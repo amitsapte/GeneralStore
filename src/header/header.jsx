@@ -19,13 +19,12 @@ const Header = () => {
 
      useEffect (() =>{
          if(findId > 0) {
-         setDefaultProduct((findId-1));
          setDefaultProduct(findId);
-         console.log(findId);
+         console.log(defaultProduct);
 
          }
          else   {
-         setDefaultProduct(defaultProduct);
+        //   setDefaultProduct(0);
         //  console.log(findId);
 
          }
@@ -89,11 +88,11 @@ const Header = () => {
                     </h2>
                 </div>
             </div>
-            {findId >= 1 || defaultProduct >0 ?
+            {findId >= 1 || defaultProduct > 0 ? 
                 <div className=" mx-6 sm:mx-16 lg:mt-14 lg:mx-24 md:mx-20 md:mt-7 h-full" >
                     <p className="font-bold"> Showing result for "{userSearch}"</p>
                     <div className="grid grid-cols-2 sm:grid-cols-2 mll:grid-cols-3 md:grid-cols-3 lgs:grid-cols-5  mt-2 h-full gap-1  ">
-                        {item[ ( (findId - 1) > 0 ? (findId -1) : defaultProduct -1 ) ].map((currentItem, index) => {
+                        {item[ ( (findId ) > 0 ? (findId -1) : (defaultProduct -1 )   ) ].map((currentItem, index) => {
                             return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1  >= 0 ? (findId -1) :  defaultProduct -1].cardImage} />
                         })}
                     </div> </div> : <div></div>}
