@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
 import chat from '../image/chat.jpeg'
+import { useDispatch, useSelector } from 'react-redux';
+import { setChatAction } from '../reduxstory/action';
 
 const ChatBot = () => {
   // State to manage chat window visibility and messages
-  const [isChatVisible, setIsChatVisible] = useState(false);
+  const dispatch = useDispatch();
+
+  const {isChatVisible } = useSelector((state )=>({
+    isChatVisible : state.chatOnorOff
+}) )
+
   const [messages, setMessages] = useState([]);
   const [userInput, setUserInput] = useState('');
 
   // Function to toggle chat window visibility
   const toggleChatWindow = () => {
-    setIsChatVisible((prev) => !prev);
+    dispatch(setChatAction(!isChatVisible));
   };
-
+ 
   // Function to handle user input and send message
   const handleSendMessage = (event) => {
     if (event.key === 'Enter' && userInput.trim()) {

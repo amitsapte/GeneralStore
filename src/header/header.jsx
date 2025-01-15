@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setUserSearch } from "../reduxstory/action";
+import { setActiveItem, setUserSearch } from "../reduxstory/action";
 import ItemCard from "../card/itemcard";
 import { product, item, arrayOfImage } from "../data/cardData";
 
@@ -9,26 +9,18 @@ const Header = () => {
     const navigator = useNavigate();
 
     const dispatch = useDispatch();
-
-
-
-    const [userSearch, setSearch] = useState("");
+    const {defaultProduct } = useSelector((state )=>({
+        defaultProduct: state.activeItemIndex
+    }) )
+  const [userSearch, setSearch] = useState("");
     const [findId, setfindId] = useState(0);
-
-    const [defaultProduct , setDefaultProduct] = useState(0);
 
      useEffect (() =>{
          if(findId > 0) {
-         setDefaultProduct(findId);
-         console.log(defaultProduct);
-
+            dispatch(setActiveItem (findId));
          }
-         else   {
-        //   setDefaultProduct(0);
-        //  console.log(findId);
-
-         }
-    }, [findId ,defaultProduct] );
+         
+    }, [findId,dispatch]);
 
 
     const displayThatItem = (event) => {
@@ -44,7 +36,7 @@ const Header = () => {
         }
         else {
             dispatch(setUserSearch(true));
-            setDefaultProduct(0);
+            dispatch(setActiveItem (0));
             setfindId(0);
         }
 
@@ -73,7 +65,14 @@ const Header = () => {
                         </p>
 
                     </div>
-                    <div className=" invisible sm:visible " >
+                      <div className="visible ml:hidden">
+                      <button type="submit" class="p-2 bg-white text-white rounded hover:bg-blue-600">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10a4 4 0 100-8 4 4 0 000 8zm0 0v1m0 4h4m1 0h1m-6-1v1m0 4H7m-2 0a9 9 0 0118 0v0a9 9 0 01-18 0v0z" />
+                       </svg>
+                      </button>
+                      </div>
+                    <div className=" invisible ml:visible " >
                         <input className=" border   w-[460px] h-[40px] rounded-md" value={userSearch} placeholder="Search" onChange={displayThatItem}></input>
                     </div>
                     <div onClick={gotoLoginPage} className="border w-[100px]  h-[40px] border-black rounded-md lg:visible invisible flex justify-center  items-center">
@@ -88,12 +87,12 @@ const Header = () => {
                     </h2>
                 </div>
             </div>
-            {findId >= 1 || defaultProduct > 0 ? 
+            {findId >= 1 || defaultProduct >0 ?
                 <div className=" mx-6 sm:mx-16 lg:mt-14 lg:mx-24 md:mx-20 md:mt-7 h-full" >
                     <p className="font-bold"> Showing result for "{userSearch}"</p>
                     <div className="grid grid-cols-2 sm:grid-cols-2 mll:grid-cols-3 md:grid-cols-3 lgs:grid-cols-5  mt-2 h-full gap-1  ">
-                        {item[ ( (findId ) > 0 ? (findId -1) : (defaultProduct -1 )   ) ].map((currentItem, index) => {
-                            return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1  >= 0 ? (findId -1) :  defaultProduct -1].cardImage} />
+                        {item[ ( (findId ) > 0 ? (findId -1) : (defaultProduct -1 )) ].map((currentItem, index) => {
+                            return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1  >= 0 ? (findId -1) :  (defaultProduct -1)].cardImage} />
                         })}
                     </div> </div> : <div></div>}
         </div>
@@ -101,3 +100,4 @@ const Header = () => {
 }
 
 export default Header;
+
