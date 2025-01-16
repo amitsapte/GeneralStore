@@ -51,35 +51,35 @@ const Header = () => {
     return (
         <div>
             <div className=" md:border-b ">
-                <div className="flex flex-row justify-between items-center w-auto  h-[50px] md:h-[80px] mx-2">
-                    <div className="  flex-row justify-between items-center h-full  lg:flex hidden">
+                <div className="flex flex-row justify-between items-center w-full  h-[50px] md:h-[80px] mx-2">
+                    <div className="  flex-row justify-between items-center h-full lgs:flex hidden">
                         <span className=" text-yellow-400 text-[30px] font-bold "> Genral</span>
                         <span className="text-green-500 text-[30px] font-bold ">Story </span>
 
                     </div>
-                    <div className=" border-r hidden lg:block w-12px h-full m-0 bg-red-600" >
+                    <div className=" border-r hidden lgs:block w-12px h-full m-0 bg-red-600" >
                     </div>
                     <div className=" flex flex-row justify-center items-center w-auto   ">
-                        <p className="text-[25px] justify-start  w-[240px] lg:text-[20px]  sm:w-[240px] md:w-[240px] sm:h-auto md:h-auto sm:text-[15px] md:text-[25px] lg:w-auto lg:h-auto font-bold">
+                        <p className="text-[25px] justify-start  w-[240px] lgs:text-[15px]  sm:w-[240px] md:w-[240px] sm:h-auto md:h-auto sm:text-[15px] md:text-[25px] lgs:w-auto lgs:h-auto font-bold">
                             Deliver in 5 Minutes
                         </p>
 
                     </div>
-                      <div className="visible ml:hidden">
-                      <button type="submit" class="p-2 bg-white text-white rounded hover:bg-blue-600">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 10a4 4 0 100-8 4 4 0 000 8zm0 0v1m0 4h4m1 0h1m-6-1v1m0 4H7m-2 0a9 9 0 0118 0v0a9 9 0 01-18 0v0z" />
+                      <div className="visible flex flex-row-reverse mr-4  w-full  ml:hidden">
+                      <button type="submit" className="p-2 bg-blue-600  text-white rounded hover:bg-blue-600">
+                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 10a4 4 0 100-8 4 4 0 000 8zm0 0v1m0 4h4m1 0h1m-6-1v1m0 4H7m-2 0a9 9 0 0118 0v0a9 9 0 01-18 0v0z" />
                        </svg>
                       </button>
                       </div>
-                    <div className=" invisible ml:visible " >
-                        <input className=" border   w-[460px] h-[40px] rounded-md" value={userSearch} placeholder="Search" onChange={displayThatItem}></input>
+                    <div className=" hidden  ml:visible " >
+                        <input className="  border w-[460px] h-[40px] rounded-md" value={userSearch} placeholder="Search" onChange={displayThatItem}></input>
                     </div>
-                    <div onClick={gotoLoginPage} className="border w-[100px]  h-[40px] border-black rounded-md lg:visible invisible flex justify-center  items-center">
+                    <div onClick={gotoLoginPage} className="border w-[100px]  h-[40px] border-black rounded-md lgs:visible hidden lgs:flex justify-center  items-center">
                         <button >Login</button>
                     </div>
-                    <div>
-                        <button className="rounded-md bg-green-500  w-[100px] lg:visible invisible h-[40px] text-white">My Card</button>
+                    <div className=" hidden lgs:visible">
+                        <button className="rounded-md bg-green-500  w-[100px] lgs:visible invisible h-[40px] text-white">My Card</button>
                     </div>
                 </div>
                 <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >
