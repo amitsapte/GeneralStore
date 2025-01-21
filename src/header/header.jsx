@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setActiveItem, setUserSearch } from "../reduxstory/action";
+import { setActiveItem, setUserSearch , setCardVisibility} from "../reduxstory/action";
 import ItemCard from "../card/itemcard";
 import { product, item, arrayOfImage } from "../data/cardData";
 
@@ -9,8 +9,8 @@ const Header = () => {
     const navigator = useNavigate();
 
     const dispatch = useDispatch();
-    const {defaultProduct } = useSelector((state )=>({
-        defaultProduct: state.activeItemIndex
+    const {defaultProduct, myCardOpenClose } = useSelector((state )=>({
+        defaultProduct: state.activeItemIndex ,myCardOpenClose :state.myCardOpenClose
     }) )
   const [userSearch, setSearch] = useState("");
     const [findId, setfindId] = useState(0);
@@ -22,6 +22,9 @@ const Header = () => {
          
     }, [findId,dispatch]);
 
+    const showMyCard = () =>{
+        dispatch(setCardVisibility(myCardOpenClose ? false :true  ));
+    };
 
     const displayThatItem = (event) => {
 
@@ -79,7 +82,7 @@ const Header = () => {
                         <button >Login</button>
                     </div>
                     <div>
-                        <button className="rounded-md bg-green-500  w-[100px] lg:visible invisible h-[40px] text-white">My Card</button>
+                        <button onClick={showMyCard} className="rounded-md bg-green-500  w-[100px] lg:visible invisible h-[40px] text-white">My Card</button>
                     </div>
                 </div>
                 <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >

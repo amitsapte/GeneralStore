@@ -3,6 +3,8 @@ export const Set_Active_Product='Set_Active_Product';
 export const Set_Active_Search ='Set_Active_Search';
 export const Set_Active_Item= 'Set_Active_Item';
 export const Set_Chat_Action= 'Set_Chat_Action';
+export const Set_My_Card_Action= "Set_card_Action";
+
 
 export const setActiveIndex=(index)=>({
       type:Set_Active_Index,
@@ -29,3 +31,7 @@ export const setChatAction=(activeItem) =>({
     payload:activeItem
 })
 
+export const setCardVisibility = (activeAction) => ({
+    type: Set_My_Card_Action,
+    payload:activeAction
+})
