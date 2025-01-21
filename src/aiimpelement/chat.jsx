@@ -52,7 +52,7 @@ const ChatBot = () => {
       {/* Floating Chat Icon */}
       <div
         onClick={toggleChatWindow}
-        className="fixed bottom-6 right-6 cursor-pointer  p-3  rounded-full shadow-lg"
+        className="fixed bottom-6 right-6 cursor-pointer  p-3  bg-gray-50 rounded-full shadow-lg"
       >
         <img src={chat} alt="Chat Icon" className="w-10 h-10 bg-transparent" />
       </div>
