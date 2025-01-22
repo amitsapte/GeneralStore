@@ -81,17 +81,13 @@ const Header = () => {
                     <div onClick={gotoLoginPage} className="border w-[110px]  h-[40px] border-black rounded-md lgs:visible hidden lgs:flex justify-center  items-center">
                         <button >Login</button>
                     </div>
-<<<<<<< HEAD
                     <div className=" hidden lgs:block mr-4">
-=======
-<<<<<<< HEAD
+
                     <div>
                         <button onClick={showMyCard} className="rounded-md bg-green-500  w-[100px] lg:visible invisible h-[40px] text-white">My Card</button>
-=======
+
                     <div className=" hidden lgs:visible">
->>>>>>> 7edc1b3c0d444c6daffa6eb33c833e5ed28bc216
                         <button className="rounded-md bg-green-500  w-[100px] lgs:visible invisible h-[40px] text-white">My Card</button>
->>>>>>> origin
                     </div>
                 </div>
                 <div className=" w-full h-[40px] border-r my-2 pl-2 border-t border-b flex items-center  md:hidden lg:hidden " >
@@ -107,6 +103,8 @@ const Header = () => {
                             return <ItemCard currentItem={currentItem} key={index} imgaeCard={arrayOfImage[findId - 1  >= 0 ? (findId -1) :  (defaultProduct -1)].cardImage} />
                         })}
                     </div> </div> : <div></div>}
+        </div>
+        </div>
         </div>
     );
 }
