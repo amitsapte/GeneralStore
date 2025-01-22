@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Product from "../card/product";
 import Header from "../header/header";
 import ChatBot from "../aiimpelement/chat";
+import { useDispatch, useSelector } from "react-redux";
+import { setCardVisibility } from "../reduxstory/action";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,6 +16,16 @@ const Home = () => {
     }
   };
 
+  const { myCardOpenClose } = useSelector((state )=>({
+  myCardOpenClose :state.myCardOpenClose
+}) )
+
+const dispatch = useDispatch();
+
+      const closeCard = () =>{
+        dispatch(setCardVisibility ( false) );
+      }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
@@ -24,6 +36,13 @@ const Home = () => {
 
   return (
     <div className='gird grid-rows-3 row-auto' >
+      <div>
+      { myCardOpenClose ? 
+      <div className="h-full bg-red-800 w-full ">
+               <button onClick={closeCard} > X</button>
+              <h1>hey can do it </h1>
+        </div> : <div></div>}
+      </div>
       <div className={`sticky top-0 w-full bg-white md:shadow-md  ${isScrolled ? '' : ''}`} >
         <Header />
       </div>
@@ -33,6 +52,9 @@ const Home = () => {
       </div>
       <div>
         <ChatBot/>
+      </div>
+      <div>
+    
       </div>
     </div>
   );
