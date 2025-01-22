@@ -25,7 +25,7 @@ const Product = () => {
             {userSearch ? (
 
                 <div  >
-                  
+
                     <div className="grid grid-flow-col gap-0">
                         <div className="flex flex-col">
                             {product.map((currentIndex, index) => {
@@ -40,7 +40,8 @@ const Product = () => {
                                         <h2 className="font-bold text-[18px]">Buy {product[activeProduct].name} online</h2>
                                     </div>
                                     <div className=" flex flex-row items-center  mr-8 ">
-                                        <div><label>sort by</label></div>
+                                        <div><label>sort by</label>
+                                        </div>
                                         <div className="ml-2">
                                             <button type="button" className="inline-flex justify-between w-full rounded-md border border-gray-300  px-4 py-2 text-sm font-medium text-green-700 ">
                                                 Default dropdown
